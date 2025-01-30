@@ -1,7 +1,9 @@
 package org.example;
 
-import java.security.spec.RSAOtherPrimeInfo;
-import java.util.Scanner;
+import org.example.Biblioteca.Editorial;
+import org.example.Biblioteca.Estudiante;
+import org.example.Biblioteca.Libro;
+import org.example.Biblioteca.Prestamo;
 
 public class Main {
     public static void main(String[] args) {

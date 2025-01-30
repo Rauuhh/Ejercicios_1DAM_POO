@@ -1,4 +1,4 @@
-package org.example;
+package equipos;
 
 import java.util.ArrayList;
 

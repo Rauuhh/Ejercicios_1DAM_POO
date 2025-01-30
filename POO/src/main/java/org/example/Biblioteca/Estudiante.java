@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Biblioteca;
 
 import java.util.ArrayList;
 
@@ -22,7 +22,7 @@ public class Estudiante {
         this.email = email;
         contadorEstudiantes++;
         this.nia = contadorEstudiantes;
-
+        libroPrestados = new ArrayList<>();
     }
     public String getCurso() {
         return this.curso;

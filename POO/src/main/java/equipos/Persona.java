@@ -1,4 +1,4 @@
-package org.example;
+package equipos;
 
 public class Persona {
     private String nombre;

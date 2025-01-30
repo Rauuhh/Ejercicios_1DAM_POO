@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Biblioteca;
 
 public class Libro {
 
@@ -11,7 +11,7 @@ public class Libro {
     final static String LIB = "LIB";
     private Estudiante estudiantePrestado;
     private Editorial editorial;
-    editorial.anyadirLibro(Libro);
+
 
     public Libro(String titulo, String autor, Editorial editorial) {
         this.titulo = titulo;
@@ -22,6 +22,7 @@ public class Libro {
         id = LIB + calcularID(cantidadLibros);
         estudiantePrestado = null;
         this.editorial = editorial;
+        editorial.anyadirLibro(this);
     }
 
     public String getTitulo() {
