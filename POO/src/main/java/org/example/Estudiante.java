@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.ArrayList;
+
 public class Estudiante {
     public static int contadorEstudiantes = 0;
     public static final String FORMATO_CORREO = "^[A-Za-z0-9+_.-]+@alu.edu.gva.es$";
@@ -7,11 +9,9 @@ public class Estudiante {
     private String curso;
     private int nia;
     private String email;
-
-
-
-    private Libro libroPrestado;
+    private ArrayList<Libro> libroPrestados;
     public Estudiante(String nombre){
+        libroPrestados = new ArrayList<>();
         this.nombre = nombre;
         contadorEstudiantes++;
         nia = contadorEstudiantes;
@@ -52,21 +52,28 @@ public class Estudiante {
     public void setEmail(String email) {
         this.email = email;
     }
-    public Libro getLibroPrestado() {
-        return libroPrestado;
+    public ArrayList<Libro> getLibroPrestados() {
+        return libroPrestados;
     }
 
-    public void setLibroPrestado(Libro libroPrestado) {
-        this.libroPrestado = libroPrestado;
+    public void setLibroPrestados(ArrayList<Libro> libroPrestados) {
+        this.libroPrestados = libroPrestados;
+    }
+
+    public void anyadirLibro(Libro libro){
+        libroPrestados.add(libro);
+    }
+    public void borrarLibro(Libro libro){
+        libroPrestados.remove(libro);
     }
 
     @Override
     public String toString() {
-        if (libroPrestado != null) {
-            return " Alumno: [" + this.nombre + " curso: " + this.curso + " nia:" + this.nia + " email: " + this.email + "Libro: " + getLibroPrestado().getTitulo() + "]";
-        }
-        return " Alumno: [" + this.nombre + " curso: " + this.curso + " nia:" + this.nia + " email: " + this.email + "]";
-    }
+  //      if (!libroPrestados.isEmpty()) {
+            return " Alumno: [" + nombre + " curso: " + curso + " nia:" + nia + " email: " + email + "Libro: " + libroPrestados + "]";
+//        }
+//        return " Alumno: [" + this.nombre + " curso: " + this.curso + " nia:" + this.nia + " email: " + this.email + "]";
+  }
     public static int obtenerTotalEstudiantes(){
         return contadorEstudiantes;
     }

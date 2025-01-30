@@ -86,4 +86,9 @@ public class Persona {
         System.out.println(this.nombre + " " + this.apellido + " " + this.dni + " " + this.peso + " " + this.edad + " " + this.ciudad + " " + this.profesion );
 
     }
+
+    @Override
+    public String toString(){
+        return "Persona : [ nombre=" + getNombre() + " apellido=" + getApellido() + " dni=" + getDni() + " peso=" + getPeso() + " edad=" + getedad() + " ciudad=" + getCiudad() + " profesion=" + getProfesion() +  " ]";
+    }
 }

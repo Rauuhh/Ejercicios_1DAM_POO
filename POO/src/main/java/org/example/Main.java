@@ -72,17 +72,12 @@ public class Main {
         else{
             System.out.println("La persona " + paciente.getNombre() + " no es mayor de edad");
 
-        }
-        Estudiante estudiante1 = new Estudiante("Pepe");
-        Estudiante estudiante2 = new Estudiante("Pepa", "1ºeso","prueba@noseque");
-        System.out.println(estudiante1);
-        System.out.println(estudiante2);
-        System.out.println(Estudiante.contadorEstudiantes);
-        System.out.println(Estudiante.obtenerTotalEstudiantes());*/
+        }*/
+
         Estudiante estudiante1 = new Estudiante("Manuel", "2 ASIR", "noseque@alu.edu.gva.es");
-        Editorial editorial = new Editorial("Freelance","España");
-        Libro libro1 = new Libro("La novia de Pol","Mostopapi",editorial);
-        Libro libro2 = new Libro("La novia de Pol 2","Mostopapi",editorial);
+        Editorial editorial = new Editorial("Freelance", "España");
+        Libro libro1 = new Libro("La novia de Pol", "Mostopapi", editorial);
+        Libro libro2 = new Libro("La novia de Pol 2", "Mostopapi", editorial);
         System.out.println(libro1);
         System.out.println(libro2);
         Prestamo prestamo = libro1.prestar(estudiante1);
@@ -95,6 +90,9 @@ public class Main {
         System.out.println(estudiante1);
         System.out.println(libro1.getLibrosDisponibles());
         libro1.devolver(estudiante1);
+        libro2.devolver(estudiante1);
+        System.out.println(estudiante1);
+
     }
 }
 
