@@ -1,0 +1,62 @@
+
+@startuml
+
+class Editorial {
+    - String nombre
+    - String pais
+    - ArrayList<Libro> listaLibros
+    + Editorial(String nombre, String pais)
+    + String getNombre()
+    + void setNombre(String nombre)
+    + String getPais()
+    + void setPais(String pais)
+    + void anyadirLibro(Libro libro)
+    + void eliminarLibro(Libro libro)
+}
+
+class Estudiante {
+    + static int contadorEstudiantes
+    + static final String FORMATO_CORREO
+    - String nombre
+    - String curso
+    - int nia
+    - String email
+    - ArrayList<Libro> libroPrestados
+    + Estudiante(String nombre)
+    + Estudiante(String nombre, String curso, String email)
+    + void anyadirLibro(Libro libro)
+    + void borrarLibro(Libro libro)
+}
+
+class Libro {
+    - String titulo
+    - String autor
+    - String id
+    - static boolean disponible
+    - static int cantidadLibros
+    - static int librosDisponibles
+    - static final String LIB
+    - Estudiante estudiantePrestado
+    - Editorial editorial
+    + Libro(String titulo, String autor, Editorial editorial)
+    + boolean getDisponible()
+    + void setDisponible(boolean disponible)
+    + void devolver(Estudiante estudiante)
+}
+
+class Prestamo {
+    - Estudiante estudiante
+    - Libro libro
+    - LocalDate fecha
+    + Prestamo(Estudiante estudiante, Libro libro)
+    + LocalDate getFecha()
+}
+
+Editorial "1" o-- "*" Libro : contiene
+Estudiante "1" o-- "*" Libro : presta
+Libro "1" -- "1" Editorial : pertenece a
+Libro "1" -- "0..1" Estudiante : prestado a
+Estudiante "1" -- "*" Prestamo : realiza
+Libro "1" -- "*" Prestamo : es parte de
+@enduml
+

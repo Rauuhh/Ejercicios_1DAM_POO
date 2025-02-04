@@ -1,14 +1,15 @@
 package org.example.Casa;
 
 public class Propietario {
+
     private String nombre;
     private int edad;
 
-    public Propietario (String nombre, int edad)
-    {
+    public Propietario(String nombre, int edad){
         this.nombre = nombre;
-        this.edad = edad;
+        this.edad=edad;
     }
+
     public String getNombre() {
         return nombre;
     }
@@ -24,10 +25,18 @@ public class Propietario {
     public void setEdad(int edad) {
         this.edad = edad;
     }
+
     @Override
     public String toString() {
-        return "Propietario [nombre=" + nombre + " ,edad= " + edad + " ]";
+        return "Propietario{" +
+                "nombre='" + nombre + '\'' +
+                ", edad=" + edad +
+                '}';
     }
+
+
+
+
 
 
 

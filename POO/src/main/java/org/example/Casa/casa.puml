@@ -1,0 +1,43 @@
+@startuml
+
+class Casa {
+    - String direccion
+    - ArrayList<Habitacion> habitaciones
+    - Propietario propietario
+    + Casa(String direccion)
+    + void setPropietario()
+    + void agregarHabitacion(String nombre, int metrosCuadrados)
+    + boolean existeHabitacion(String nombre)
+    + void borrarHabitacion(String nombre)
+    + void mostrarHabitaciones()
+    + Habitacion getHabitacionMasGrande()
+    + void calcularHabitacionMasConsumo()
+}
+
+class Habitacion {
+    - String nombre
+    - int metrosCuadrados
+    - ArrayList<Electrodomestico> listaElectrodomesticos
+    + Habitacion(String nombre, int metrosCuadrados)
+    + void agregarElectrodomestico(String nombre, double consumo)
+    + boolean existeElectrodomestico(String nombre)
+    + void mostrarElectrodomesticos()
+    + double calcularConsumoHabitacion()
+}
+
+class Electrodomestico {
+    - String nombre
+    - double consumo
+    + Electrodomestico(String nombre, double consumo)
+}
+
+class Propietario {
+    - String nombre
+    - int edad
+    + Propietario(String nombre, int edad)
+}
+
+Casa "1" *-- "*" Habitacion : contiene
+Habitacion "1" *-- "*" Electrodomestico : tiene
+Casa "1" *-- "1" Propietario : pertenece a
+@enduml
