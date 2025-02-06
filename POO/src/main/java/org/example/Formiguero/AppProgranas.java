@@ -1,19 +1,31 @@
-package org.example.Formiguero;
+package org.example;
 
-import org.example.Casa.Casa;
+public class AppProgramas {
+    public static void main (String[] args){
 
-public class AppProgranas {
-    public static void main(String[] args) {
+        //creamos una cadena de tv
+        Cadena antena3 = new Cadena("Antena 3");
+        System.out.println(antena3);
 
-        Casa casa = new Casa("Calle Mayor 123");
+        //creamos un programa
+        Programa el_hormiguero = new Programa("El Hormiguero",1,"Mostopapi");
+        System.out.println(el_hormiguero);
+        System.out.println(antena3);
 
-        System.out.println(casa.getPropietario());
-        casa.agregarHabitacion("Dormitorio",40);
-        casa.agregarHabitacion("Cocina",35);
-        casa.agregarHabitacion("Baño",10);
+        //insertamos empleados en el programa
+        el_hormiguero.agregarEmpleado("Pablo Motos","presentador");
+        System.out.println(el_hormiguero);
 
-        casa.mostrarHabitaciones();
+        //ver empleados del programa
+        System.out.println(el_hormiguero.getListaEmpleados());
 
+        //insertamos invitados en el programa
+        el_hormiguero.agregarInvitado("Aitana","cantante",1);
 
+        //ver invitados del programa
+        System.out.println(el_hormiguero.getListaInvitados());
+
+        // ver temporadas
+        System.out.println(el_hormiguero.getTemporadas());
     }
 }
