@@ -3,6 +3,7 @@ package org.example.GestionInstituto;
 public class AppCursos {
 
     public static void main(String[] args) {
+        //crear instituto
         Instituto instituto = new Instituto("IES MUTXAMEL");
         //crear cursos
         Curso cursoJava = new Curso("Java", 100);
