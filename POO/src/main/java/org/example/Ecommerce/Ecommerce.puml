@@ -1,0 +1,48 @@
+@startuml
+
+class AppEccomerce {
+    +main(String[] args)
+}
+
+class Tienda {
+    +realizarPago(MetodoPago metodo, double importe)
+    +iniciarPago()
+    -procesoTarjeta()
+    -procesoBizum()
+    -procesoPayPal()
+}
+
+abstract class MetodoPago {
+    +procesarPago(double importe)
+}
+
+class Bizum extends MetodoPago {
+    -String telefono
+    -int pin
+    +Bizum(String telefono)
+    +validarBizum(int pin)
+    +generarPin()
+}
+
+class PayPal extends MetodoPago {
+    -String cuenta
+    -double saldo
+    +PayPal(String cuenta, double saldo)
+    +PayPal(String cuenta)
+    -validarPayPal(String cuenta, double importe)
+}
+
+class TarjetaCredito extends MetodoPago {
+    -String nro_tarjeta
+    -String tipo
+    +TarjetaCredito(String nro_tarjeta, String tipo)
+    -validarTarjeta(String nro_tarjeta, String tipo)
+}
+
+AppEccomerce --> Tienda : usa
+Tienda --> MetodoPago : usa
+MetodoPago <|-- Bizum
+MetodoPago <|-- PayPal
+MetodoPago <|-- TarjetaCredito
+
+@enduml
