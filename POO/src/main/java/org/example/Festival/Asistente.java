@@ -3,6 +3,7 @@ package org.example.Festival;
 class Asistente extends Persona {
     protected String entrada; //tipo de entrada (General, VIP, etc.)
 
+565256+
     public Asistente(String nombre, int edad, TipoEntrada entrada) {
         super(nombre, edad); //llamamos al constructor de la clase Persona
         this.entrada = String.valueOf(entrada);
